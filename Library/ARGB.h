@@ -15,6 +15,7 @@
 /**
  * Significant history (date, user, job code, action):
  * - 2022-10-18, Dylan Arrabito  <darrabito@carngeigerobotics.com>, IRAD.8015.1, Greatly modified to support ChibiOS.
+ * - 2023-06-08, Morgan Visnesky <mvisnesky@carnegierobotics.com>, 2036.05.01, Fix for missing blue channel value for last LED of ws2812 strip.
  */
 
 #pragma once
