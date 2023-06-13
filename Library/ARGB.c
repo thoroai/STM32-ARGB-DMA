@@ -739,13 +739,13 @@ hsv_t rgb2hsv_approximate(const rgb_t rgb)
 
 hsv_t argb_get_hue(uint16_t i)
 {
-    rgb_t rgb = {.r=rgb_buf[i], .g=rgb_buf[i+1], .b=rgb_buf[i+2]};
+    rgb_t rgb = {.r=rgb_buf[(3*i)], .g=rgb_buf[(3*i)+1], .b=rgb_buf[(3*i)+2]};
     return rgb2hsv_approximate(rgb);
 }
 
 rgb_t argb_get_rgb(uint16_t i)
 {
-    rgb_t rgb = {.r=rgb_buf[i], .g=rgb_buf[i+1], .b=rgb_buf[i+2]};
+    rgb_t rgb = {.r=rgb_buf[(3*i)], .g=rgb_buf[(3*i)+1], .b=rgb_buf[(3*i)+2]};
     return rgb;
 }
 
