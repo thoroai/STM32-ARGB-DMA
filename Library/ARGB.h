@@ -15,6 +15,7 @@
 /**
  * Significant history (date, user, job code, action):
  * - 2022-10-18, Dylan Arrabito  <darrabito@carngeigerobotics.com>, IRAD.8015.1, Greatly modified to support ChibiOS.
+ * - 2023-06-08, Morgan Visnesky <mvisnesky@carnegierobotics.com>, 2036.05.01, Fix for missing blue channel value for last LED of ws2812 strip.
  */
 
 #pragma once
@@ -29,10 +30,9 @@
  * @addtogroup User_settings
  * @brief LED & Timer's settings
  * @{
- */
-
-
-#define NUM_PIXELS NUM_LEDS ///< Pixel quantity
+ */ 
+#define NUM_PIXELS (NUM_LEDS + 1) ///<- Pixel quantity
+// The `+1` above is an extra byte used to give the DMA transfer a bit of extra time which ensures the last LED's RGB-PWM data gets transfered and then displayed correctly.
 
 #define USE_GAMMA_CORRECTION 1 ///< Gamma-correction should fix red&green, try for yourself
 
