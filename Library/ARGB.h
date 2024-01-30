@@ -104,13 +104,13 @@ typedef struct {
 typedef enum 
 {
     HUE_RED    = 0,
+    HUE_ORANGE = 11,
     HUE_YELLOW = 42,
     HUE_GREEN  = 85,
     HUE_AQUA   = 128,
     HUE_BLUE   = 171,
     HUE_PURPLE = 213
     // HUE_RED = 0,
-    // HUE_ORANGE = 32,
     // HUE_YELLOW = 64,
     // HUE_GREEN = 96,
     // HUE_AQUA = 128,
