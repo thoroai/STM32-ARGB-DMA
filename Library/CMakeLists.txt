@@ -1,5 +1,5 @@
 if (NOT TARGET ${BOARD}_argb)
-    if (BUILD_BPM44)
+    if (${ROBOT} STREQUAL "bpm44")
         add_library(
             ${BOARD}_argb 
             STATIC ${SUBREPO_DIR}/stm32_argb_dma/Library/ARGB.c
