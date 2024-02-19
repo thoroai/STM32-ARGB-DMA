@@ -10,7 +10,7 @@ if (NOT TARGET ${BOARD}_argb)
         )
         target_link_libraries(
             ${BOARD}_argb 
-            PRIVATE ${BOARD}_chconf
+            PUBLIC ${BOARD}_kernel
         )
     else ()
         add_library(${BOARD}_argb INTERFACE)
