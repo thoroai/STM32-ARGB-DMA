@@ -1,19 +1,18 @@
-if (NOT TARGET ${BOARD}_can_mock)
+if (NOT TARGET ${BOARD}_argb_mock)
 
-    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/../include ${CMAKE_CURRENT_SOURCE_DIR})
+    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR})
     add_library(
-        ${BOARD}_can_mock
-        STATIC ${CMAKE_CURRENT_SOURCE_DIR}/mocks/mock_can_icd.c
-                ${CMAKE_CURRENT_SOURCE_DIR}/mocks/mock_canserver.c
+        ${BOARD}_argb_mock
+        STATIC mocks/argb_mock.c
+               mocks/fast_math_mock.c
     )
     target_include_directories(
-        ${BOARD}_can_mock
+        ${BOARD}_argb_mock
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mocks
-               ${CMAKE_CURRENT_SOURCE_DIR}/../include
-               ${CMAKE_CURRENT_SOURCE_DIR}/../include/can
+               ${CMAKE_CURRENT_SOURCE_DIR}/..
     )
     target_link_libraries(
-        ${BOARD}_can_mock
+        ${BOARD}_argb_mock
         PRIVATE ${BOARD}_unit_test_core
                 ${BOARD}_kernel
     )
