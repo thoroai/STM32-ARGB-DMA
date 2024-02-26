@@ -12,6 +12,9 @@ if (NOT TARGET ${BOARD}_argb)
             ${BOARD}_argb 
             PUBLIC ${BOARD}_kernel
         )
+
+        add_subdirectory(test)
+        
     else ()
         add_library(${BOARD}_argb INTERFACE)
     endif ()
