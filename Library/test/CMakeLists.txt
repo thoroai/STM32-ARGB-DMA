@@ -3,7 +3,7 @@ if (NOT TARGET ${BOARD}_argb_mock)
     mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR})
     add_library(
         ${BOARD}_argb_mock
-        STATIC mocks/argb_mock.c
+        STATIC mocks/ARGB_mock.c
                mocks/fast_math_mock.c
     )
     target_include_directories(

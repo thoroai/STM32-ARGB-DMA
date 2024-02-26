@@ -2,9 +2,14 @@
 
 #pragma once
 
-#include "ch.h"
+#include "stdint.h"
 
 #define FIXFRAC8(N,D) (((N)*256)/(D))
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /// add one byte to another, saturating at 0xFF
 /// @param i - first byte to add
@@ -29,7 +34,7 @@ static inline uint8_t qsub8( uint8_t i, uint8_t j)
 ///         square root for 16-bit integers
 ///         About three times faster and five times smaller
 ///         than Arduino's general sqrt on AVR.
-static uint8_t sqrt16(uint16_t x)
+static inline uint8_t sqrt16(uint16_t x)
 {
     if( x <= 1) {
         return x;
@@ -58,3 +63,7 @@ static uint8_t sqrt16(uint16_t x)
 
     return low - 1;
 }
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

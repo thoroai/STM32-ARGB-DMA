@@ -119,6 +119,10 @@ typedef enum
     // HUE_PINK = 224
 } hsv_hue;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void argb_init(void);   // Initialization
 void argb_clear(void);  // Clear strip
 
@@ -142,5 +146,9 @@ rgb_t argb_get_rgb(uint16_t i);
 
 argb_state argb_ready(void); // Get DMA Ready state
 argb_state argb_show(void); // Push data to the strip
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 /// @} @}
