@@ -317,7 +317,7 @@ void argb_set_rgb(uint16_t i, uint8_t r, uint8_t g, uint8_t b)
  * @param[in] sat Saturation  [0..255]
  * @param[in] val Value (brightness) [0..255]
  */
-void argb_set_hsv(uint16_t i, uint8_t hue, uint8_t sat, uint8_t val) 
+void argb_set_hsv(uint16_t i, hsv_hue hue, uint8_t sat, uint8_t val) 
 {
     rgb_t rgb = {.r=0, .g=0, .b=0};
     hsv_t hsv = {.h=hue, .s=sat, .v=val};
@@ -370,7 +370,7 @@ void argb_fill_hsv_range(uint16_t start, uint16_t end, uint8_t hue, uint8_t sat,
  * @param[in] sat Saturation  [0..255]
  * @param[in] val Value (brightness) [0..255]
  */
-void argb_fill_hsv(uint8_t hue, uint8_t sat, uint8_t val) 
+void argb_fill_hsv(hsv_hue hue, uint8_t sat, uint8_t val) 
 {
     argb_fill_hsv_range(0, NUM_LEDS-1, hue, sat, val);
 }
