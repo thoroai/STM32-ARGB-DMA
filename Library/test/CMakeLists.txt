@@ -1,6 +1,6 @@
 if (${ROBOT} STREQUAL "bpm44")
 
-    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR})
+    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR} cmock_config.yml "")
     add_library(
         ${BOARD}_argb_mock
         STATIC mocks/ARGB_mock.c
@@ -14,7 +14,7 @@ if (${ROBOT} STREQUAL "bpm44")
     target_link_libraries(
         ${BOARD}_argb_mock
         PRIVATE ${BOARD}_unit_test_core
-                ${BOARD}_kernel
+                ${BOARD}_kernel_mock
     )
 else ()
 
