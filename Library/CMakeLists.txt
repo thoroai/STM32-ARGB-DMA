@@ -1,6 +1,7 @@
 if (${ROBOT} STREQUAL "bpm44")
 
-    add_library(
+    if (NOT UNIT_TEST)
+add_library(
         ${BOARD}_argb 
         STATIC ${SUBREPO_DIR}/stm32_argb_dma/Library/ARGB.c
     )
@@ -19,4 +20,7 @@ else ()
 
 endif ()
 
+
+else()
 add_subdirectory(test)
+endif()
