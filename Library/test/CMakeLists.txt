@@ -1,10 +1,10 @@
 if (${ROBOT} STREQUAL "bpm44")
-
-    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR} cmock_config.yml "")
+    list(APPEND ARGB_DONT_MOCK ${CMAKE_CURRENT_SOURCE_DIR}/../fast_math.h)
+    mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR} cmock_config.yml ${ARGB_DONT_MOCK})
+    
     add_library(
         ${BOARD}_argb_mock
         STATIC mocks/ARGB_mock.c
-            mocks/fast_math_mock.c
     )
     target_include_directories(
         ${BOARD}_argb_mock
