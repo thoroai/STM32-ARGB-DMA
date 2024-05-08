@@ -187,6 +187,8 @@ static const uint16_t grb_end = GRB_END;
 
 
 static inline uint8_t scale8(uint8_t x, uint8_t scale); // Gamma correction
+static void hsv2rgb_raw(const hsv_t hsv, rgb_t * rgb);
+static hsv_t rgb2hsv_approximate(const rgb_t rgb);
 
 static void argb_tim_dma_delay_pulse(void *param, uint32_t flags);
 /// @} //Private
