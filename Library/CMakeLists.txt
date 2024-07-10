@@ -1,5 +1,5 @@
 if (NOT UNIT_TEST)
-    if (${ROBOT} STREQUAL "bpm44")
+    if (BUILD_BPM44)
 
         add_library(
             ${BOARD}_argb 
