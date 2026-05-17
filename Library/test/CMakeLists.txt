@@ -16,6 +16,26 @@ if (${ROBOT} STREQUAL "bpm44")
         PRIVATE ${BOARD}_unit_test_core
                 ${BOARD}_kernel_mock
     )
+
+    # ---------------------------------------------------------------------
+    # Real tests of the saturating-arithmetic helpers in fast_math.h
+    # (qadd8 / qsub8 / sqrt16). Header-only `static inline`; the test ELF
+    # includes the header directly — no platform deps.
+    # ---------------------------------------------------------------------
+    list(APPEND ${BOARD}_fast_math_test_libs
+        ${BOARD}_unit_test_core
+        ${BOARD}_kernel_mock
+        ${BOARD}_core_mock
+    )
+    BUILD_EMBEDDED_PROJECT(
+        ${BOARD}_fast_math_test
+        native
+        ${CMAKE_CURRENT_SOURCE_DIR}/fast_math_test.c
+        "${${BOARD}_fast_math_test_libs}"
+        ${CMAKE_CURRENT_SOURCE_DIR}/..
+        ${CMAKE_CURRENT_SOURCE_DIR}/..
+        ${CMAKE_BINARY_DIR}/test
+    )
 else ()
 
     add_library(${BOARD}_argb_mock INTERFACE)
