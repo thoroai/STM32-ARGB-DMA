@@ -1,4 +1,4 @@
-if (${ROBOT} STREQUAL "bpm44")
+if (BUILD_BPM44)
     list(APPEND ARGB_DONT_MOCK ${CMAKE_CURRENT_SOURCE_DIR}/../fast_math.h)
     mock_header(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR} cmock_config.yml ${ARGB_DONT_MOCK})
     
