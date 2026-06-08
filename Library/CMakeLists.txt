@@ -1,5 +1,5 @@
 if (NOT UNIT_TEST)
-    if (BUILD_BPM44)
+    if (HAS_BIT_BANG_LEDS)
 
         add_library(
             ${BOARD}_argb 
